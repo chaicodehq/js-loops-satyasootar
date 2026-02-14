@@ -87,7 +87,7 @@
           class: passenger.fallback,
           status:"confirmed"
         });
-        continue;
+        continue
       }
       results.push({
         name: passenger.name,
