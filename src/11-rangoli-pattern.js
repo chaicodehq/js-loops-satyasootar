@@ -15,11 +15,11 @@
  *   - No trailing spaces on any row
  *
  * Pattern for n=3:
- *     *
- *   * *
+ *       *
+ *     * *
  *   * * *
- *   * *
- *     *
+ *     * *
+ *       *
  *
  * (Each row is a string in the returned array)
  *
@@ -36,5 +36,39 @@
  *   rangoli(3) // => ["  *", " * *", "* * *", " * *", "  *"]
  */
 export function rangoli(n) {
-  // Your code here
+  if(n <= 0 || typeof n !== "number" || Number.isNaN(n) || !Number.isInteger(n)){
+    return []
+  }
+  let diamond = []
+  for(let i = 1; i <= n; i++){
+    let row = ""
+    
+    for(let s = 0; s < n-i; s++){
+      row += " ";
+    }
+    for(let j= 0; j< i; j++){
+      row += "*";
+      if(j < i -1){
+        row += " "
+      }
+    }
+    diamond.push(row)
+  } 
+
+for(let i = n - 1; i >= 1; i--){
+    let row = ""
+    
+    for(let s = 0; s < n-i; s++){
+      row += " ";
+    }
+    for(let j= 0; j< i; j++){
+      row += "*";
+      if(j < i -1){
+        row +=" "
+      }
+    }
+    diamond.push(row)
+  } 
+
+return diamond
 }
